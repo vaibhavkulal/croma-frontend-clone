@@ -1,0 +1,630 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  padding-top: 70px;
+  background-color: black;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  height: 100px;
+  color: white;
+  background-color: black;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  padding-left: 20px;
+  text-decoration: none;
+  font-size: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.menu-header {
+  margin: 0;
+  padding: 15px 20px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.content:hover {
+  background-color: #12daa8;
+  color: #000;
+}
+
+.menu-main {
+  position: relative;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 900;
+  font-size: 22px;
+  max-height: 0;
+  width: 300px;
+  overflow: hidden;
+  color: white;
+  background-color: #484848;
+}
+
+h4 {
+  margin: 0;
+  padding: 10px 20px;
+}
+
+.menu-subcontent {
+  background-color: #191919;
+  padding: 10px 0;
+  max-height: 350px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #12daa8 #191919;
+}
+
+.menu-subcontent h4 {
+  font-size: 22px;
+  font-weight: bolder;
+  color: #ccc;
+  padding: 8px 20px;
+}
+
+h5.subcontent {
+  font-size: 15px;
+}
+
+.subcontent {
+  display: block;
+  padding: 8px 20px;
+  margin: 0;
+  font-size: 16px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.subcontent:hover {
+  background-color: #12daa8;
+  color: #000;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  flex: 1;
+  max-width: 500px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+  background-color: white;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  border: none;
+  background-color: white;
+  color: #000;
+  font-size: 16px;
+  border-radius: 0px 6px 6px 0px;
+  cursor: pointer;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  padding-left: 100px;
+  gap: 40px;
+  margin-left: 40px;
+  font-size: 18px;
+}
+
+.icons i {
+  cursor: pointer;
+}
+
+#location {
+  cursor: pointer;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.main-scroll {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  /* border: 1px solid black; */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrolling {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.icon img {
+  width: 115px;
+  height: 140px;
+  border-radius: 10px;
+}
+
+.btn {
+  position: absolute;
+  top: 30%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+}
+
+.btn-left {
+  left: 10px;
+}
+
+.btn-right {
+  right: 10px;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.slideshow {
+  width: 100%;
+  height: 85%;
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.slideshow img {
+  display: none;
+}
+
+.main-scroll {
+  height: 150px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.scrolling {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.icon {
+  flex: 0 0 115px;
+  height: 140px;
+}
+
+.icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+img.active {
+  display: block;
+  border: none;
+}
+
+.left {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  left: 10px;
+}
+
+.right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  right: 10px;
+}
+
+.scrolling img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.bank {
+  overflow: hidden;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #111;
+  padding: 10px 0;
+}
+
+.bank-track {
+  display: flex;
+  gap: 15px;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+  /* automatic scroll */
+}
+
+.card {
+  flex: 0 0 250px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 10px;
+  color: white;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.card .text h4 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.card .text p {
+  margin: 2px 0 0 0;
+  font-size: 12px;
+  color: #ccc;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fest {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.festival {
+  width: 90%;
+}
+
+.launch {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  padding-left: 30px;
+}
+
+.Launches {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #111;
+  gap: 10px;
+}
+
+.Launches .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  max-width: 400px;
+  max-height: 300px;
+  margin-top: 20px;
+  gap: 10px;
+  text-align: center;
+  padding: 15px;
+}
+
+.Launches .card h2 {
+  margin: 10px 0 5px;
+  font-size: 22px;
+}
+
+.Launches .card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.Launches .card p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.Launches .card button {
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: none;
+  background-color: #12daa8;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.Launches .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+.Launches .cardb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+
+  border-radius: 10px;
+
+  gap: 10px;
+
+  padding: 15px;
+
+  img {
+    border-radius: 20px;
+    width: 270px;
+    height: 350px;
+    object-fit: cover;
+  }
+}
+
+.LaunchExcluse {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #202020;
+  gap: 15px;
+}
+
+.cardCroma {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 220px;
+  text-align: center;
+  gap: 8px;
+  color: white;
+  background-color: #000;
+}
+
+.cardCroma img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.cardCroma h3 {
+  font-size: 16px;
+  margin: 5px 0;
+  font-weight: 600;
+  color: white;
+}
+
+.cardCroma p {
+  font-size: 14px;
+  margin: 2px 0;
+  color: white;
+}
+
+.cardCroma p strike {
+  color: red;
+  margin-left: 5px;
+}
+
+.cardDeals {
+  display: flex;
+}
+
+.cardDeal {
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 10px;
+}
+
+.cardDeal img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.Launchdel {
+  display: flex;
+  gap: 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.cardd {
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.cardd img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.footer {
+  background-color: #111;
+  color: white;
+  padding: 40px 60px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-col h4 {
+  margin-bottom: 20px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.connect .email-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.connect .email-box input {
+  border: none;
+  padding: 10px;
+  flex: 1;
+  outline: none;
+}
+
+.connect .email-box button {
+  border: none;
+  background: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.copyright {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.link-grid {
+  display: flex;
+  gap: 40px;
+}
+
+.link-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-grid ul li {
+  margin-bottom: 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+
+.brand-scroll {
+  margin-top: 30px;
+  width: 100%;
+  overflow: hidden;
+  /* background: #fff; */
+  padding: 20px 0;
+}
+
+.brand-scrolling {
+  display: flex;
+  gap: 40px;
+  animation: scrollLoop 25s linear infinite;
+}
+
+.icon img {
+  border: 2px solid gray;
+  background-color: gray;
+  padding: 30px;
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+
+
+/* Keyframes for infinite scroll */
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
